@@ -1,3 +1,11 @@
 Rails.application.routes.draw do
-  resources :text_to_speech
+  namespace :api do
+      namespace :v1 do
+        resources :users do
+          post :signin, on: :collection
+          post :signup, on: :collection
+        end
+        resources :text_to_speech
+      end
+  end
 end
