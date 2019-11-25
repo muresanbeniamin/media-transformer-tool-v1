@@ -13,6 +13,8 @@ gem 'jbuilder'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'httparty'
 gem 'jwt'
+gem 'simple_command'
+gem 'rack-cors'
 
 group :development, :test do
   gem 'pry-rails'
