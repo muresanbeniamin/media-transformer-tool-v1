@@ -14,11 +14,8 @@ module Api::V1
 
     def signup
       user = User.new(signup_params)
-      if user.save
-        render json: { auth_token: JsonWebToken.encode(user_id: user.id) }
-      else
-        render json: { error: user.errors.messages }, status: 422
-      end
+      user.save or raise_unprocessable(user)
+      render json: { auth_token: JsonWebToken.encode(user_id: user.id) }
     end
 
     def recover_password
