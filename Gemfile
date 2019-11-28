@@ -27,6 +27,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen'
   gem 'annotate'
+  gem "letter_opener"
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
