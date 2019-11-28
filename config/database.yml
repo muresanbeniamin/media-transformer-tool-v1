@@ -8,11 +8,17 @@ default: &default
 development:
   <<: *default
   database: media_transformation_tool_dev
-  username: media_transformation
-  password: random
+  username: transform
+  password: transform
 
 test:
   <<: *default
   database: media_transformation_tool_test
-  username: media_transformation
-  password: random
+  username: transform
+  password: transform
+
+production:
+  database: media_transformation_tool_production
+  timeout: 5000
+  username: <%= ENV['TRANSFORM_USER'] %>
+  password:  <%= ENV['TRANSFORM_PASSWORD'] %>
