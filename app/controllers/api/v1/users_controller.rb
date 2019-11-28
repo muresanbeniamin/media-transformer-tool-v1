@@ -19,7 +19,7 @@ module Api::V1
     end
 
     def recover_password
-      user = User.find_by(params.permit(:email))
+      user = User.find_by(email: params.permit(:email)[:email])
       if user.present? 
         new_password = SecureRandom.hex(8)
         user.update(password: new_password)
@@ -33,7 +33,7 @@ module Api::V1
     private
 
     def signup_params
-      params.permit(:email, :password, :name)
+      params.permit(:email, :password, :full_name)
     end
   end
  end
