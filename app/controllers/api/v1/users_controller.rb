@@ -21,6 +21,19 @@ module Api::V1
       end
     end
 
+    def recover_password
+      user = User.find_by(params.permit(:email))
+      if user.present? 
+        new_password = SecureRandom.hex(8)
+        user.update(password: new_password)
+        UserMailer.forgot_password(user: user, password: new_password).deliver_later
+        render json: { message: 'You will receive an email shortly' }
+
+      else
+        render json: { error: 'Email not found' }, status: 404
+      end
+    end
+
     private
 
     def signup_params
