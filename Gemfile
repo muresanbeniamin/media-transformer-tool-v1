@@ -15,6 +15,7 @@ gem 'httparty'
 gem 'jwt'
 gem 'simple_command'
 gem 'rack-cors'
+gem "google-cloud-storage"
 
 group :development, :test do
   gem 'pry-rails'
