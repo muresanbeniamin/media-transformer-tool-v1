@@ -6,13 +6,8 @@ Rails.application.routes.draw do
           post :signup, on: :collection
           post :recover_password, on: :collection
         end
-        resources :media_histories
+        resources :media_histories, only: [:create]
         resources :text_to_speech
-      end
-      namespace :rails do
-        resources :active_storage do
-          post :direct_uploads, on: :collection
-        end
       end
   end
 end
