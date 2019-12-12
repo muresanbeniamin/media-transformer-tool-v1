@@ -6,6 +6,7 @@ Rails.application.routes.draw do
           post :signup, on: :collection
           post :recover_password, on: :collection
         end
+        resources :media_histories, only: [:create]
         resources :text_to_speech
       end
   end
