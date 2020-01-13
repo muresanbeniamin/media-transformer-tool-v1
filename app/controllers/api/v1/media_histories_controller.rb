@@ -1,7 +1,7 @@
 module Api::V1
   class MediaHistoriesController < ApplicationController
     def index
-      render json: MediaHistory.all
+      render json: current_user.media_histories
     end
 
     def create

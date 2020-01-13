@@ -14,4 +14,5 @@ class User < ApplicationRecord
   has_secure_password
   validates :email, :full_name, presence: true
   validates_uniqueness_of :email
+  has_many :media_histories
 end
