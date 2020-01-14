@@ -22,7 +22,7 @@ class MediaHistorySerializer < ActiveModel::Serializer
   end
 
   def date
-    object.created_at
+    object.created_at.strftime("%B, %d, %Y")
   end
 
   def text

@@ -1,7 +1,7 @@
 module Api::V1
   class MediaHistoriesController < ApplicationController
     def index
-      render json: current_user.media_histories
+      render json: current_user.media_histories.order(created_at: :desc)
     end
 
     def create
