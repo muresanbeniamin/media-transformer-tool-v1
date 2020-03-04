@@ -1,24 +1,7 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# API Endpoints
+- POST   **/api/v1/users/signin(.:format)**                       
+- POST   **/api/v1/users/signup(.:format)**                                                           
+- POST   **/api/v1/users/recover_password(.:format)**                                                
+- GET    **/api/v1/media_histories(.:format)**                                                        
+- POST   **/api/v1/media_histories(.:format)**                                                       
+- POST   **/api/v1/text_to_speech(.:format)**                                                         
